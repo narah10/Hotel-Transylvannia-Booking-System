@@ -3,7 +3,7 @@ const mongodb = require('../db/connect');
 
 const getAll = async (req, res) => {
     try {
-      const result = await mongodb.getDb().db('hotel-transylvania').collection('guest').find();
+      const result = await mongodb.getDb().db('hotel-transylvania').collection('rooms').find();
       const lists = await result.toArray();
       console.log(lists);
       res.setHeader('Content-Type', 'application/json');
