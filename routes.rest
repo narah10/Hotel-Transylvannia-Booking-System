@@ -1,0 +1,139 @@
+// ------------------------------------------ LOCAL HOST ------------------------------------------
+
+// GUEST COLLECTION
+
+###
+GET http://localhost:8080/guest
+
+###
+POST http://localhost:8080/guest HTTP/1.1 content-type: application/json
+
+###
+PUT http://localhost:8080/guest/### HTTP/1.1 content-type: application/json
+
+###
+DELETE http://localhost:8080/guest/### HTTP/1.1
+
+// RESERVATIONS COLLECTION
+
+###
+GET http://localhost:8080/reservations
+
+###
+POST http://localhost:8080/reservations HTTP/1.1 content-type: application/json
+
+###
+PUT http://localhost:8080/reservations/### HTTP/1.1 content-type: application/json
+
+###
+DELETE http://localhost:8080/reservations/### HTTP/1.1
+
+// ROOMS COLLECTION
+###
+GET http://localhost:8080/rooms
+
+###
+POST http://localhost:8080/rooms HTTP/1.1 content-type: application/json
+
+###
+PUT http://localhost:8080/rooms/### HTTP/1.1 content-type: application/json
+
+###
+DELETE http://localhost:8080/rooms/### HTTP/1.1
+
+// SERVICES COLLECTION
+
+###
+GET http://localhost:8080/services
+
+###
+POST http://localhost:8080/services HTTP/1.1 content-type: application/json
+
+###
+PUT http://localhost:8080/services/### HTTP/1.1 content-type: application/json
+
+###
+DELETE http://localhost:8080/services/### HTTP/1.1
+
+// STAFF COLLECTION
+
+###
+GET http://localhost:8080/staff
+
+###
+POST http://localhost:8080/staff HTTP/1.1 content-type: application/json
+
+###
+PUT http://localhost:8080/staff/### HTTP/1.1 content-type: application/json
+
+###
+DELETE http://localhost:8080/staff/### HTTP/1.1
+
+// ------------------------------------------ RENDER LINKS ------------------------------------------
+
+###
+GET https://hotel-transylvania.onrender.com/guest
+
+###
+POST https://hotel-transylvania.onrender.com/guest HTTP/1.1 content-type: application/json
+
+###
+PUT https://hotel-transylvania.onrender.com/guest/### HTTP/1.1 content-type: application/json
+
+###
+DELETE https://hotel-transylvania.onrender.com/guest/### HTTP/1.1
+
+// RESERVATIONS COLLECTION
+
+###
+GET https://hotel-transylvania.onrender.com/reservations
+
+###
+POST https://hotel-transylvania.onrender.com/reservations HTTP/1.1 content-type: application/json
+
+###
+PUT https://hotel-transylvania.onrender.com/reservations/### HTTP/1.1 content-type: application/json
+
+###
+DELETE https://hotel-transylvania.onrender.com/reservations/### HTTP/1.1
+
+// ROOMS COLLECTION
+###
+GET https://hotel-transylvania.onrender.com/rooms
+
+###
+POST https://hotel-transylvania.onrender.com/rooms HTTP/1.1 content-type: application/json
+
+###
+PUT https://hotel-transylvania.onrender.com/rooms/### HTTP/1.1 content-type: application/json
+
+###
+DELETE https://hotel-transylvania.onrender.com/rooms/### HTTP/1.1
+
+// SERVICES COLLECTION
+
+###
+GET https://hotel-transylvania.onrender.com/services
+
+###
+POST https://hotel-transylvania.onrender.com/services HTTP/1.1 content-type: application/json
+
+###
+PUT https://hotel-transylvania.onrender.com/services/### HTTP/1.1 content-type: application/json
+
+###
+DELETE https://hotel-transylvania.onrender.com/services/### HTTP/1.1
+
+// STAFF COLLECTION
+
+###
+GET https://hotel-transylvania.onrender.com/staff
+
+###
+POST https://hotel-transylvania.onrender.com/staff HTTP/1.1 content-type: application/json
+
+###
+PUT https://hotel-transylvania.onrender.com/staff/### HTTP/1.1 content-type: application/json
+
+###
+DELETE https://hotel-transylvania.onrender.com/staff/### HTTP/1.1
