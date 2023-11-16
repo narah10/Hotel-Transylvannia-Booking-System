@@ -9,10 +9,22 @@ GET http://localhost:8080/guest
 GET http://localhost:8080/guest/65543ec10b9769dd0c74f4e2
 
 ###
-POST http://localhost:8080/guest HTTP/1.1 content-type: application/json
+POST http://localhost:8080/guest/ HTTP/1.1
+content-type: application/json
+
+{
+    "guestID": "9654",
+    "firstName": "Mike",
+    "lastName": "Santos",
+    "email": "mikesantos@fake.com",
+    "phone": "000-333-0000",
+    "dateOfBirth": "01/01/1989",
+    "identificationConfirmation": "Driver License"
+}
 
 ###
-PUT http://localhost:8080/guest/### HTTP/1.1 content-type: application/json
+PUT http://localhost:8080/guest/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE http://localhost:8080/guest/### HTTP/1.1
@@ -26,10 +38,12 @@ GET http://localhost:8080/reservations
 GET http://localhost:8080/reservations/###
 
 ###
-POST http://localhost:8080/reservations HTTP/1.1 content-type: application/json
+POST http://localhost:8080/reservations HTTP/1.1
+content-type: application/json
 
 ###
-PUT http://localhost:8080/reservations/### HTTP/1.1 content-type: application/json
+PUT http://localhost:8080/reservations/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE http://localhost:8080/reservations/### HTTP/1.1
@@ -42,10 +56,12 @@ GET http://localhost:8080/rooms
 GET http://localhost:8080/rooms/###
 
 ###
-POST http://localhost:8080/rooms HTTP/1.1 content-type: application/json
+POST http://localhost:8080/rooms HTTP/1.1
+content-type: application/json
 
 ###
-PUT http://localhost:8080/rooms/### HTTP/1.1 content-type: application/json
+PUT http://localhost:8080/rooms/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE http://localhost:8080/rooms/### HTTP/1.1
@@ -59,10 +75,12 @@ GET http://localhost:8080/services
 GET http://localhost:8080/services/###
 
 ###
-POST http://localhost:8080/services HTTP/1.1 content-type: application/json
+POST http://localhost:8080/services HTTP/1.1
+content-type: application/json
 
 ###
-PUT http://localhost:8080/services/### HTTP/1.1 content-type: application/json
+PUT http://localhost:8080/services/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE http://localhost:8080/services/### HTTP/1.1
@@ -76,10 +94,12 @@ GET http://localhost:8080/staff
 GET http://localhost:8080/staff/###
 
 ###
-POST http://localhost:8080/staff HTTP/1.1 content-type: application/json
+POST http://localhost:8080/staff HTTP/1.1
+content-type: application/json
 
 ###
-PUT http://localhost:8080/staff/### HTTP/1.1 content-type: application/json
+PUT http://localhost:8080/staff/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE http://localhost:8080/staff/### HTTP/1.1
@@ -97,10 +117,12 @@ GET https://hotel-transylvania.onrender.com/guest
 GET https://hotel-transylvania.onrender.com/guest/65543ec10b9769dd0c74f4e2
 
 ###
-POST https://hotel-transylvania.onrender.com/guest HTTP/1.1 content-type: application/json
+POST https://hotel-transylvania.onrender.com/guest HTTP/1.1
+content-type: application/json
 
 ###
-PUT https://hotel-transylvania.onrender.com/guest/### HTTP/1.1 content-type: application/json
+PUT https://hotel-transylvania.onrender.com/guest/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE https://hotel-transylvania.onrender.com/guest/### HTTP/1.1
@@ -114,10 +136,12 @@ GET https://hotel-transylvania.onrender.com/reservations
 GET https://hotel-transylvania.onrender.com/reservations/###
 
 ###
-POST https://hotel-transylvania.onrender.com/reservations HTTP/1.1 content-type: application/json
+POST https://hotel-transylvania.onrender.com/reservations HTTP/1.1
+content-type: application/json
 
 ###
-PUT https://hotel-transylvania.onrender.com/reservations/### HTTP/1.1 content-type: application/json
+PUT https://hotel-transylvania.onrender.com/reservations/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE https://hotel-transylvania.onrender.com/reservations/### HTTP/1.1
@@ -130,10 +154,12 @@ GET https://hotel-transylvania.onrender.com/rooms
 GET https://hotel-transylvania.onrender.com/rooms/###
 
 ###
-POST https://hotel-transylvania.onrender.com/rooms HTTP/1.1 content-type: application/json
+POST https://hotel-transylvania.onrender.com/rooms HTTP/1.1
+content-type:application/json
 
 ###
-PUT https://hotel-transylvania.onrender.com/rooms/### HTTP/1.1 content-type: application/json
+PUT https://hotel-transylvania.onrender.com/rooms/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE https://hotel-transylvania.onrender.com/rooms/### HTTP/1.1
@@ -147,10 +173,12 @@ GET https://hotel-transylvania.onrender.com/services
 GET https://hotel-transylvania.onrender.com/services/###
 
 ###
-POST https://hotel-transylvania.onrender.com/services HTTP/1.1 content-type: application/json
+POST https://hotel-transylvania.onrender.com/services HTTP/1.1
+content-type: application/json
 
 ###
-PUT https://hotel-transylvania.onrender.com/services/### HTTP/1.1 content-type: application/json
+PUT https://hotel-transylvania.onrender.com/services/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE https://hotel-transylvania.onrender.com/services/### HTTP/1.1
@@ -164,10 +192,12 @@ GET https://hotel-transylvania.onrender.com/staff
 GET https://hotel-transylvania.onrender.com/staff/###
 
 ###
-POST https://hotel-transylvania.onrender.com/staff HTTP/1.1 content-type: application/json
+POST https://hotel-transylvania.onrender.com/staff HTTP/1.1
+content-type: application/json
 
 ###
-PUT https://hotel-transylvania.onrender.com/staff/### HTTP/1.1 content-type: application/json
+PUT https://hotel-transylvania.onrender.com/staff/### HTTP/1.1
+content-type: application/json
 
 ###
 DELETE https://hotel-transylvania.onrender.com/staff/### HTTP/1.1
