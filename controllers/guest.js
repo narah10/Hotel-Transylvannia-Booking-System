@@ -34,4 +34,28 @@ const getSingle = async (req, res, next) => {
     }
 };
 
-module.exports = { getAll, getSingle };
+const createGuest = async (req, res, next) => {
+    const guest = {
+        guestID: req.body.guestID,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
+        dateOfBirth: req.body.dateOfBirth,
+        identificationConfirmation: req.body.identificationConfirmation
+    };
+    const response = await mongodb
+        .getDb()
+        .db("hotel-transylvania").collection("guest")
+        .insertOne(guest);
+        if (response.acknowledged) {
+            res.status(201).json(response);
+        } else {
+            res
+                .status(500)
+                .json(response.error || "Some error occurred while creating the contact");
+        }
+};
+
+module.exports = { getAll, getSingle, createGuest };
