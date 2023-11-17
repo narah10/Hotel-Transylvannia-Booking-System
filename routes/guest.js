@@ -7,5 +7,7 @@ const guestsController = require("../controllers/guest");
 router.get("/", guestsController.getAll);
 router.get("/:id", guestsController.getSingle);
 router.post("/", guestsController.createGuest);
+router.put('/:id', guestsController.updateGuest);
+router.delete('/:id', guestsController.deleteGuest);
 
 module.exports = router;

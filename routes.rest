@@ -6,10 +6,25 @@
 GET http://localhost:8080/guest
 
 ###
-GET http://localhost:8080/guest/65543ec10b9769dd0c74f4e2
+GET http://localhost:8080/guest/6556d6b9e506d9ba191f68da
 
 ###
 POST http://localhost:8080/guest/ HTTP/1.1
+content-type: application/json
+
+{
+    "guestID": "5782",
+    "firstName": "Darvin",
+    "lastName": "Brown",
+    "email": "mynameisdarvin@fake.com",
+    "phone": "021-873-0840",
+    "address": "fake address 777",
+    "dateOfBirth": "11/25/1989",
+    "identificationConfirmation": "State ID"
+}
+
+###
+PUT http://localhost:8080/guest/655570fe4f93dd1059559c60 HTTP/1.1
 content-type: application/json
 
 {
@@ -18,16 +33,13 @@ content-type: application/json
     "lastName": "Santos",
     "email": "mikesantos@fake.com",
     "phone": "000-333-0000",
-    "dateOfBirth": "01/01/1989",
+    "address": "fake address 321",
+    "dateOfBirth": "11/25/1989",
     "identificationConfirmation": "Driver License"
 }
 
 ###
-PUT http://localhost:8080/guest/### HTTP/1.1
-content-type: application/json
-
-###
-DELETE http://localhost:8080/guest/### HTTP/1.1
+DELETE http://localhost:8080/guest/6556d6b9e506d9ba191f68da HTTP/1.1
 
 // RESERVATIONS COLLECTION
 

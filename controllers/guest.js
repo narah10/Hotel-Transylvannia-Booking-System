@@ -58,4 +58,45 @@ const createGuest = async (req, res, next) => {
         }
 };
 
-module.exports = { getAll, getSingle, createGuest };
+const updateGuest = async (req, res, next) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must be a valid guest ID to update a guest')
+    }
+    const userId = new ObjectId(req.params.id);
+    const guest = {
+        guestID: req.body.guestID,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
+        dateOfBirth: req.body.dateOfBirth,
+        identificationConfirmation: req.body.identificationConfirmation
+    };
+    const response = await mongodb
+    .getDb()
+    .db("hotel-transylvania")
+    .collection("guest")
+    .replaceOne({ _id: userId }, guest);
+    if (response.modifiedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || "Some error occurred while updating the contact");
+    };
+};
+
+const deleteGuest = async (req, res, next) => {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb
+    .getDb()
+    .db("hotel-transylvania")
+    .collection('guest')
+    .deleteOne({ _id: userId }, true);
+    if (response.deletedCount > 0) {
+      res.status(200).send();
+    } else {
+      res.status(500).json(response.error || 'Some errors occurred while deleting the contact');
+    };
+  };
+
+module.exports = { getAll, getSingle, createGuest, updateGuest, deleteGuest };
