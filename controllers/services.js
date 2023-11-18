@@ -17,7 +17,7 @@ const getAll = async (req, res) => {
 //get single Service with id
 const getSingle = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid Service id to find a Service.');
+      res.status(400).json('Must use a valid service id to find a Service.');
     }
     const serviceId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -81,7 +81,7 @@ if (!ObjectId.isValid(req.params.id)) {
 
 const deleteService = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid room id to delete a service info.');
+      res.status(400).json('Must use a valid service id to delete a service info.');
     }
     const serviceId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db('hotel-transylvania').collection('services').deleteOne({ _id: serviceId }, true);

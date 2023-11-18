@@ -17,7 +17,7 @@ const getAll = async (req, res) => {
 //get single room with id
 const getSingle = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid room id to find a room.');
+      res.status(400).json('Must use a valid staff id to find a room.');
     }
     const staffId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -82,7 +82,7 @@ if (!ObjectId.isValid(req.params.id)) {
 
 const deleteStaff = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid room id to delete a staff member info.');
+      res.status(400).json('Must use a valid staff id to delete a staff member info.');
     }
     const staffId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db('hotel-transylvania').collection('staff').deleteOne({ _id: staffId }, true);
