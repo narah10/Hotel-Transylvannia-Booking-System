@@ -61,7 +61,7 @@ try {
 //updating room with id
 const updateStaff = async (req, res) => {
 if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid Staff id to find a Room.');
+    res.status(400).json('Must use a valid Staff id to find a Staff member.');
 }
     const staffId = new ObjectId(req.params.id);
     const newStaff = {
