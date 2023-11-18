@@ -65,18 +65,37 @@ DELETE http://localhost:8080/reservations/### HTTP/1.1
 GET http://localhost:8080/rooms
 
 ###
-GET http://localhost:8080/rooms/###
+GET http://localhost:8080/rooms/65544948809415b9b22fee1b
 
-###
+### create Rooms
 POST http://localhost:8080/rooms HTTP/1.1
 content-type: application/json
 
-###
-PUT http://localhost:8080/rooms/### HTTP/1.1
+{
+    "roomNumber": "3002",
+    "description": "Indulge in the epitome of luxury with our Deluxe Suite. This spacious and elegantly appointed suite is designed to offer a premium experience for our discerning guests.",
+    "features": "Panoramic City Views, Private Balcony, Spa-Inspired Bathroom, Complimentary Minibar",
+    "pricePerNight": "$1000",
+    "roomType": "Deluxe Suite",
+    "status": "Booked"
+}
+
+
+### update Room with roomId
+PUT http://localhost:8080/rooms/65584df2394c88cf838197d0 HTTP/1.1
 content-type: application/json
 
+{
+    "roomNumber": "3002",
+    "description": "Indulge in the epitome of luxury with our Deluxe Suite. This spacious and elegantly appointed suite is designed to offer a premium experience for our discerning guests.",
+    "features": "Panoramic City Views, Private Balcony, Spa-Inspired Bathroom, Complimentary Minibar",
+    "pricePerNight": "$3000",
+    "roomType": "Deluxe Suite",
+    "status": "Booked"
+}
+
 ###
-DELETE http://localhost:8080/rooms/### HTTP/1.1
+DELETE http://localhost:8080/rooms/65584df2394c88cf838197d0 HTTP/1.1
 
 // SERVICES COLLECTION
 
