@@ -7,7 +7,7 @@ const saveGuest = (req, res, next) => {
       lastName: "required|string",
       email: "required|string",
       phone: "required|string",
-      birthDate: "required|string",
+      dateOfBirth: "required|string",
       address: "required|string",
       dateOfBirth: "required|string",
     };
@@ -25,6 +25,4 @@ const saveGuest = (req, res, next) => {
     });
 };
 
-module.exports = {
-    saveGuest
-};
+module.exports = { saveGuest };
