@@ -2,17 +2,39 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    try {
-      const result = await mongodb.getDb().db('hotel-transylvania').collection('rooms').find();
-      const lists = await result.toArray();
-      console.log(lists);
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    } catch (error) {
-      console.error("Error while fetching rooms:", error);
-      res.status(500).json({ error: "Internal Server Error" });
+  try {
+    // Extract the availability status and room type from the query parameters
+    const { status, roomType } = req.query;
+
+    // Define a filter based on the availability status and room type
+    const filter = {};
+    
+    if (status) {
+      filter.status = status;
     }
-  };
+    if (roomType) {
+      filter.roomType = roomType;
+    }
+
+    // Query the database with the filter
+    const result = await mongodb
+      .getDb()
+      .db('hotel-transylvania')
+      .collection('rooms')
+      .find(filter);
+
+    // Convert the result to an array
+    const lists = await result.toArray();
+
+    // Log and send the response
+    console.log(lists);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  } catch (error) {
+    console.error("Error while fetching rooms:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 //get single room with id
 const getSingle = async (req, res) => {
@@ -40,7 +62,7 @@ try {
     description: req.body.description,
     features: req.body.features,
     pricePerNight: req.body.pricePerNight,
-    roomType: req.body.Single,
+    roomType: req.body.roomType,
     status: req.body.status,
     };
 

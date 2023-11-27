@@ -25,4 +25,26 @@ const saveGuest = (req, res, next) => {
     });
 };
 
-module.exports = { saveGuest };
+const saveRoom = (req, res, next) => {
+    const validationRule = {
+        roomNumber: "required|string", 
+        description: "required|string",
+        features: "required|string",
+        pricePerNight: "required|string",
+        roomType: "required|string",
+        status: "required|string",
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+      if (!status) {
+        res.status(412).send({
+          success: false,
+          message: 'Validation failed',
+          data: err
+        });
+      } else {
+        next();
+      }
+    });
+  };
+
+module.exports = { saveGuest, saveRoom };
