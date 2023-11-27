@@ -186,6 +186,18 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "roomType",
+            "in": "query",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -216,7 +228,7 @@
                 "pricePerNight": {
                   "example": "any"
                 },
-                "Single": {
+                "roomType": {
                   "example": "any"
                 },
                 "status": {
