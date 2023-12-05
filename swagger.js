@@ -3,10 +3,10 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Hotel Transylvania API',
-    description: 'Description',
+    description: 'Group Project for CSE 341',
   },
-  host: 'localhost:8080',
-  schemes: ['http'],
+  host: 'https://hotel-transylvania.onrender.com',
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
