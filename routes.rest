@@ -95,7 +95,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:8080/rooms/65584df2394c88cf838197d0 HTTP/1.1
+DELETE http://localhost:8080/rooms/65584f906623e93b34867e98 HTTP/1.1
 
 // SERVICES COLLECTION
 
