@@ -11,14 +11,14 @@ describe('Test Handlers', () => {
         expect(res.statusCode).toBe(302)
     })
 
-    test('responds to /guest', async () => {
-        const res = await request.get('/guest');
+    test('responds to /api-docs', async () => {
+        const res = await request.get('/api-docs');
         expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
         expect(res.statusCode).toBe(302)
     })
 
-    test('responds to /reservation', async () => {
-        const res = await request.get('/reservation');
+    test('responds to /guest', async () => {
+        const res = await request.get('/guest');
         expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
         expect(res.statusCode).toBe(302)
     })
@@ -40,4 +40,11 @@ describe('Test Handlers', () => {
         expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
         expect(res.statusCode).toBe(302)
     })
+
+    test('responds to /reservations', async () => {
+        const res = await request.get('/reservations');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
+
 })

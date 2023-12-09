@@ -49,6 +49,34 @@ describe('insert and delete', () => {
         expect(deletedGuest).toEqual(null);
     });
 
+    it('should insert a new guest into the room collection', async () => {
+        const rooms = db.collection('rooms');
+
+        const mockRooms = {
+            roomNumber: "3002",
+            description: "Indulge in the epitome of luxury with our Deluxe Suite. This spacious and elegantly appointed suite is designed to offer a premium experience for our discerning guests.",
+            features: "Panoramic City Views, Private Balcony, Spa-Inspired Bathroom, Complimentary Minibar",
+            pricePerNight: "$1000",
+            roomType: "Deluxe Suite",
+            status: "Booked",
+        };
+
+        await rooms.insertOne(mockRooms);
+
+        const insertedRooms = await rooms.findOne({ roomNumber: '3002' });
+
+        delete insertedRooms._id;
+        delete mockRooms._id;
+
+        expect(insertedRooms).toEqual(mockRooms);
+    });
+
+    it('should delete a guest from the rooms collection', async () => {
+        const rooms = db.collection('rooms');
+        await rooms.deleteMany({ roomNumber: '3002' });
+        const deletedRoom = await rooms.findOne({ roomNumber: '3002' });
+        expect(deletedRoom).toEqual(null);
+      
     // test for staff
     it('should insert a new staff member into the staff collection', async () => {
         const staff = db.collection('staff');
