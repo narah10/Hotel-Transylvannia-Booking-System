@@ -5,7 +5,7 @@ const doc = {
     title: 'Hotel Transylvania API',
     description: 'Group Project for CSE 341',
   },
-  host: 'https://hotel-transylvania.onrender.com',
+  host: 'hotel-transylvania.onrender.com',
   schemes: ['https'],
 };
 
