@@ -5,7 +5,7 @@
     "description": "Group Project for CSE 341",
     "version": "1.0.0"
   },
-  "host": "https://hotel-transylvania.onrender.com",
+  "host": "hotel-transylvania.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
