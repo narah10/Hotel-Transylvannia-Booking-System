@@ -11,6 +11,12 @@ describe('Test Handlers', () => {
         expect(res.statusCode).toBe(302)
     })
 
+    test('responds to /api-docs', async () => {
+        const res = await request.get('/api-docs');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
+
     test('responds to /guest', async () => {
         const res = await request.get('/guest');
         expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
