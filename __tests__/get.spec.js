@@ -16,4 +16,28 @@ describe('Test Handlers', () => {
         expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
         expect(res.statusCode).toBe(302)
     })
+
+    test('responds to /reservation', async () => {
+        const res = await request.get('/reservation');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
+
+    test('responds to /rooms', async () => {
+        const res = await request.get('/rooms');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
+
+    test('responds to /services', async () => {
+        const res = await request.get('/services');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
+
+    test('responds to /staff', async () => {
+        const res = await request.get('/staff');
+        expect(res.header['content-type']).toBe('text/plain; charset=utf-8');
+        expect(res.statusCode).toBe(302)
+    })
 })

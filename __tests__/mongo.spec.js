@@ -48,4 +48,34 @@ describe('insert and delete', () => {
         const deletedGuest = await guests.findOne({ guestID: '4321' });
         expect(deletedGuest).toEqual(null);
     });
+
+    // test for staff
+    it('should insert a new staff member into the staff collection', async () => {
+        const staff = db.collection('staff');
+
+        const mockStaff = {
+            firstName: 'John',
+            lastName: 'Doe',
+            role: "Manager",
+            email: "johndoe@gmail.com",
+            phone: "456-789-1234",
+            address: "123 Main Street"
+        };
+
+        await staff.insertOne(mockStaff);
+
+        const insertedStaff = await staff.findOne({ phone: '456-789-1234' });
+
+        delete insertedStaff._id;
+        delete mockStaff._id;
+
+        expect(insertedStaff).toEqual(mockStaff);
+    });
+
+    it('should delete a staff member from the staff collection', async () => {
+        const staff = db.collection('staff');
+        await staff.deleteMany({ phone: '456-789-1234' });
+        const deletedStaff = await staff.findOne({ phone: '456-789-1234' });
+        expect(deletedStaff).toEqual(null);
+    });
 });
