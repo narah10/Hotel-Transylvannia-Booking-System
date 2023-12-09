@@ -47,4 +47,72 @@ const saveRoom = (req, res, next) => {
     });
   };
 
-module.exports = { saveGuest, saveRoom };
+const saveStaff = (req, res, next) => {
+    const validationRule = {
+      firstName: "required|string",
+      lastName: "required|string",
+      role: "required|string",
+      email: "required|string",
+      phone: "required|string",
+      address: "required|string",
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+      if (!status) {
+        res.status(412).send({
+          success: false,
+          message: 'Validation failed',
+          data: err
+        })
+      } else {
+        next();
+      }
+    })
+}
+
+const saveService = (req, res, next) => {
+  const validationRule = {
+    serviceName: "required|string",
+    description: "required|string",
+    price: "required|string",
+    availabilityStatus: "required|string",
+    schedule: "required|string",
+    location: "required|string"
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      })
+    } else {
+      next();
+    }
+  })
+}
+
+
+const saveReservation = (req, res, next) => {
+  const validationRule = {
+    guestID: "required|string",
+    roomID: "required|string",
+    checkIn: "required|string",
+    checkOut: "required|string",
+    totalPrice: "required|string",
+    status: "required|string",
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      })
+    } else {
+      next();
+    }
+  })
+}
+
+
+module.exports = { saveGuest, saveRoom, saveStaff, saveService, saveReservation };
